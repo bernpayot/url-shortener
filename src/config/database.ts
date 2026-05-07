@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { Pool } from "pg";
-import requireEnv from "./env-checker.js";
+import requireEnv from "./env.checker.js";
 
 const pool = new Pool({
   host: requireEnv("DB_HOST"),
@@ -15,11 +15,11 @@ async function connectDatabase(): Promise<void> {
     const client = await pool.connect();
 
     await client.query("SELECT 1");
-    console.log("Successfully connected to postgresql database.");
+    console.log("Successfully connected to PostgreSQL database.");
 
     client.release();
   } catch (err) {
-    console.error("Postgresql Database connection error:", err);
+    console.error("PostgreSQL Database connection error:", err);
     process.exit(1);
   }
 }

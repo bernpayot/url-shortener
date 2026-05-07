@@ -1,5 +1,5 @@
 import { createClient } from "redis";
-import requireEnv from "./env-checker.js";
+import requireEnv from "./env.checker.js";
 
 const client = createClient({
   url: requireEnv("REDIS_URL"),
