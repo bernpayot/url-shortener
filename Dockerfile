@@ -13,4 +13,4 @@ COPY package*.json ./
 COPY --from=builder /app/dist/ ./dist
 RUN npm install --omit=dev
 EXPOSE 3000
-CMD ["node", "dist/index.js"]
+CMD ["sh", "start.sh"]
