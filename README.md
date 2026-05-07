@@ -33,7 +33,7 @@ Make sure you have the following installed:
 Clone the repository
 
 ```bash
-  git clone
+  git clone https://github.com/bernpayot/url-shortener.git
   cd url-shortener
 ```
 
