@@ -37,12 +37,6 @@ Clone the repository
   cd url-shortener
 ```
 
-Install dependencies
-
-```bash
-npm install
-```
-
 Set up the environment
 - an .env.example is provided inside the project.
 ```bash
@@ -60,9 +54,9 @@ You will have to set up these environment variables manually.
 PORT=
 DB_HOST=
 DB_PORT=
-DB_USER=
-DB_PASSWORD=
-DB_NAME=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_DB=
 REDIS_URL=
 DATABASE_URL=
 ```

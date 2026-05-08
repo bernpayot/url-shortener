@@ -5,9 +5,9 @@ import requireEnv from "./env.checker.js";
 const pool = new Pool({
   host: requireEnv("DB_HOST"),
   port: Number(requireEnv("DB_PORT")),
-  user: requireEnv("DB_USER"),
-  password: requireEnv("DB_PASSWORD"),
-  database: requireEnv("DB_NAME"),
+  user: requireEnv("POSTGRES_USER"),
+  password: requireEnv("POSTGRES_PASSWORD"),
+  database: requireEnv("POSTGRES_DB"),
 });
 
 async function connectDatabase(): Promise<void> {
