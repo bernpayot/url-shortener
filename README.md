@@ -20,6 +20,7 @@ Repository Layered Architecture - I have used this architecture quite a bit in s
 - PostgreSQL
 - Redis
 - Docker
+- EJS
 
 ## Getting Started
 
