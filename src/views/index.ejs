@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Acno's URL Shortener!</title>
+    </head>
+    <body>
+        Enter a long link to shorten it!
+        <form id="shorten-form">
+            <input
+                id="email-input"
+                type="text"
+                name="link"
+                placeholder="Enter a long link"
+                required
+            />
+            <button type="submit">Shorten!</button>
+        </form>
+
+        <div class="result"></div>
+
+        <script>
+            const resultScreen = document.querySelector(".result");
+
+            document.getElementById('shorten-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const originalLink = document.getElementById("email-input").value;
+
+                try {
+                    const response = await fetch('/shorten', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ originalUrl: originalLink }),
+                        });
+
+                    if (!response.ok) {
+                        throw new Error(`Response status: ${response.status}`);
+                    }
+
+                        const result = await response.json();
+                        resultScreen.innerHTML = `
+                          <h3>Here is your short link!</h3> <br>
+                          <a href="https://acno.dev/${result.shortCode}">acno.dev/${result.shortCode}</a> <br>
+                          ${result.originalUrl} <br>
+                          ${result.accessCount} <br>
+                          ${result.createdAt} <br>
+                          `;
+                } catch (err) {
+                    resultScreen.innerHTML = `<p>Something went wrong. Please try again.</p>`;
+                    console.error(err);
+                }
+            }
+        </script>
+    </body>
+</html>

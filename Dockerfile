@@ -10,6 +10,7 @@ RUN npm run build
 FROM node:22-alpine AS runner
 WORKDIR /app
 COPY package*.json ./
+COPY --from=builder /app/src/views/ ./dist/views/
 COPY --from=builder /app/dist/ ./dist
 COPY migrations/ ./migrations/
 COPY start.sh .
