@@ -38,17 +38,23 @@
 
                         const result = await response.json();
                         resultScreen.innerHTML = `
-                          <h3>Here is your short link!</h3> <br>
-                          <a href="https://acno.dev/${result.shortCode}">acno.dev/${result.shortCode}</a> <br>
-                          ${result.originalUrl} <br>
-                          ${result.accessCount} <br>
-                          ${result.createdAt} <br>
-                          `;
+                                        <h3>Here is your short link!</h3>
+
+                                        <a
+                                            href="https://acno.dev/${result.shortCode}"
+                                            target="_blank"
+                                        >
+                                            acno.dev/${result.shortCode}
+                                        </a>
+
+                                        <p>${result.originalUrl}</p>
+                                        <p>${result.createdAt}</p>
+                                    `;
                 } catch (err) {
                     resultScreen.innerHTML = `<p>Something went wrong. Please try again.</p>`;
                     console.error(err);
                 }
-            }
+            });
         </script>
     </body>
 </html>
