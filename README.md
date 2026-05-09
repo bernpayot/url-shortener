@@ -1,7 +1,7 @@
 
 # URL Shortener Backend Project
 
-https://github.com/bernpayot/url-shortener
+Roadmap.sh Project URL: https://roadmap.sh/projects/url-shortening-service
 Check it out! https://acno.dev/
 
 A backend project from Roadmap.sh. It's a RESTful API that allows users to shorten long URLS. Built this as a learning project to develop my backend fundamentals. I used AI as a mentor to guide me through architectural decisions and deepen my understanding of backend concepts.
